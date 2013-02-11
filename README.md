@@ -36,4 +36,4 @@ chrome://chrome/extensions
 
 About
 -------------------------
-This work is licensed under GPLv3.  Created by Time Comben. Made in Plymouth, Michigan.
+This work is licensed under GPLv3.  Created by Tim Comben. Made in Plymouth, Michigan.
