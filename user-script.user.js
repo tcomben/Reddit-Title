@@ -24,6 +24,21 @@ if(location.href.indexOf("reddit.com") > -1){
 }else if(location.href.indexOf("redditTitle=") > -1){
 	var docHref = location.href;
 	
-	document.title = decodeURI(docHref.substr(docHref.indexOf("redditTitle=") + 12, docHref.length - (docHref.indexOf("redditTitle=") + 12)));
+	var title = decodeURI(docHref.substr(docHref.indexOf("redditTitle=") + 12, docHref.length - (docHref.indexOf("redditTitle=") + 12)));
+
+	//
+	// attempt to decode URL again until it doesn't contain "%20", or is decoded 16 times.
+	//
+	var i = 0;
+	while(title.indexOf("%20") != -1 || i++ < 16){
+		title = decodeURI(title);
+	}
+
+	var originalTitle = "";
+
+	// add a "//" to the start of the next line to turn off appending the original title to the Reddit title.
+	originalTitle = document.title;
+
+	document.title = title + (originalTitle != "" ? " - " + originalTitle : "");
 }
 

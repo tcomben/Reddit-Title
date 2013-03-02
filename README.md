@@ -33,6 +33,10 @@ chrome://chrome/extensions
 2. Drag and drop "user-script.user.js" into Chrome.
 3. Allow for the user script to be added.
 
+Known Bugs
+--------------------------
+Doesn't work on quickmeme.com.
+
 
 About
 -------------------------
